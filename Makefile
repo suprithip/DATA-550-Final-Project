@@ -1,4 +1,4 @@
-report.html: Final-Project-Report.Rmd code/04_RenderReport.R table graph_alv graph_pa
+report.pdf: Final-Project-Report.Rmd code/04_RenderReport.R table graph_alv graph_pa
 	Rscript code/04_RenderReport.R
 
 table:
