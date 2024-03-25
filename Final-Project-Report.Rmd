@@ -1,0 +1,56 @@
+---
+title: "Comparison of Clinical Predictive Scores for Appendicitis"
+author: "Suprithi Pingle"
+date: "`r Sys.Date()`"
+output: pdf_document
+params:
+    production: TRUE
+    cutpoint: 6
+---
+
+```{r, set-chunk-opts, echo = FALSE, eval = params$production}
+library(knitr)
+opts_chunk$set(
+  echo = FALSE, warning = FALSE, message = FALSE
+)
+```
+
+# **Introduction**
+This data set contains information about children who were admitted to Children’s Hospital St. Hedwig in Regensburg, Germany, between 2016 and 2021 with abdominal pain and suspected appendicitis. The primary measured outcomes were if there was a diagnosis of appendicitis, if it was managed with surgery or not, and if appendicitis was present, how severe was it. Along with these outcomes, results from the laboratory tests, physical exams, the patient’s hospital experience were also collected. Clinical scores that measure the likelihood of appendicitis (the Alvarado and Pediatric Appendicitis Scores) were measured during the hospital admission. Both measures have a range between 1 to 10.
+
+# **Goals**
+
+1. Compare the sensitivities of the Alvarado Score and Pediatric Appendicitis (PA) Score in correctly predicting a diagnosis. 
+2. Determine if the severity of appendicitis acts as a potential effect modifier in these scores predictions
+
+```{r, load-table-figures,include=FALSE}
+#load table
+summary_df<-readRDS(here::here("output/summary_df.rds"))
+graph_alv<-readRDS(here::here("output/graph_alv.rds"))
+graph_pa<-readRDS(here::here("output/graph_pa.rds"))
+
+```
+
+# **Analysis**
+
+## Tabular
+
+Below is a comparison of the sensitivities for the Alvarado Score and PA Score within the Regensburg Pediatric Cohort. Both measures say that a score above `r params$cutpoint` is a probable diagnosis of appendicitis. We can see that the Alvarado Score has a much higher sensitivity than the PA, indicating it has fewer false negative cases.
+
+```{r, analysis-table}
+# Print the table showing the sensitivities for each scoring method
+knitr::kable(summary_df, digits=1, escape=FALSE,col.names = c("Measure","Sensitivity(%)"))
+```
+
+## Graphical Analysis
+The grouped bar plots below show how severity of confirmed appendicitis varies within each predicted clinical score. In general we can see that for both measures, the incidence of complicated cases of appendicitis increases as the score increases.
+
+```{r, analysis-graph1,fig.width=7, fig.height=7}
+#Alvarado Score Severity
+graph_alv
+```
+
+```{r, analysis-graph2,fig.width=7, fig.height=7}
+#PA Score Severity
+graph_pa
+```
