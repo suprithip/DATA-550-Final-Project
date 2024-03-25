@@ -8,6 +8,10 @@ params:
     cutpoint: 6
 ---
 
+```{r, here-i-am, include = FALSE}
+here::i_am("README.md")
+```
+
 ```{r, set-chunk-opts, echo = FALSE, eval = params$production}
 library(knitr)
 opts_chunk$set(
