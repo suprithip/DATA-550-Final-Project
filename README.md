@@ -39,3 +39,9 @@ Below is a brief explanation of the file structure and code location
 3. Execute the Makefile by running the command `make report.pdf` in the terminal window of R studio.
 4. Review the final report named `Final-Project-Report.pdf` in the local repository to see the analysis findings.
 5. If you wish to make changes to the code or report, create and checkout a new branch and add all new commits and pushes along this branch. Submit a pull request if you wish to request for the original repository to incorporate these changes. Note: Request may be denied.
+
+### Future Exploration
+If you would like to adjust the score threshold to investigate how the sensitivity of each diagnostic method is affected:
+  1. Go to the [config.yml](config.yml) to change the number from a base threshold of 6 to any other number between 1-10. Save the          file.
+  2. Run `make clean` to erase your previous report and figures in the output folder.
+  3. Run `make report` again to regenerate your report. Note: While the sensitivity values in the table will change, the text               description will not reflect this change, so analysis must be rewritten by researcher again based on the new values.
