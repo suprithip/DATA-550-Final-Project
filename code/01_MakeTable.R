@@ -1,14 +1,16 @@
 here::i_am("README.md")
 
 library(readxl)
-data <- read_excel("app_data.xlsx")
+data <- read_excel("app_data.xlsx") #read data
+
+config <- yaml::yaml.load_file("config.yml") #load score threshold
 
 # Sensitivity for Alvarado Score
-alvarado_sensitivity <- sum(!is.na(data$Diagnosis) & data$Diagnosis == 'appendicitis' & !is.na(data$Alvarado_Score) & data$Alvarado_Score >= 6) /
+alvarado_sensitivity <- sum(!is.na(data$Diagnosis) & data$Diagnosis == 'appendicitis' & !is.na(data$Alvarado_Score) & data$Alvarado_Score >= config$score_threshold) /
   sum(!is.na(data$Diagnosis) & data$Diagnosis == 'appendicitis' & !is.na(data$Alvarado_Score))
 
 # Sensitivity for Pediatric Appendicitis Score
-pediatric_sensitivity <- sum(!is.na(data$Diagnosis) & data$Diagnosis == 'appendicitis' & !is.na(data$Paedriatic_Appendicitis_Score) & data$Paedriatic_Appendicitis_Score >= 6) /
+pediatric_sensitivity <- sum(!is.na(data$Diagnosis) & data$Diagnosis == 'appendicitis' & !is.na(data$Paedriatic_Appendicitis_Score) & data$Paedriatic_Appendicitis_Score >= config$score_threshold) /
   sum(!is.na(data$Diagnosis) & data$Diagnosis == 'appendicitis' & !is.na(data$Paedriatic_Appendicitis_Score))
 
 # Create a summary dataframe
