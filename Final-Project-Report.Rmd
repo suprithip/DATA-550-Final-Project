@@ -5,7 +5,6 @@ date: "`r Sys.Date()`"
 output: pdf_document
 params:
     production: TRUE
-    cutpoint: 6
 ---
 
 ```{r, here-i-am, include = FALSE}
@@ -17,6 +16,12 @@ library(knitr)
 opts_chunk$set(
   echo = FALSE, warning = FALSE, message = FALSE
 )
+```
+
+```{r,set-yml-opts, echo=FALSE, eval=params$production}
+library(yaml)
+# Load configuration
+config <- yaml::yaml.load_file("config.yml")
 ```
 
 # **Introduction**
@@ -39,7 +44,7 @@ graph_pa<-readRDS(here::here("output/graph_pa.rds"))
 
 ## Tabular
 
-Below is a comparison of the sensitivities for the Alvarado Score and PA Score within the Regensburg Pediatric Cohort. Both measures say that a score above `r params$cutpoint` is a probable diagnosis of appendicitis. We can see that the Alvarado Score has a much higher sensitivity than the PA, indicating it has fewer false negative cases.
+Below is a comparison of the sensitivities for the Alvarado Score and PA Score within the Regensburg Pediatric Cohort. Both measures say that a score above `r config$score_threshold` is a probable diagnosis of appendicitis. We can see that the Alvarado Score has a much higher sensitivity than the PA, indicating it has fewer false negative cases.
 
 ```{r, analysis-table}
 # Print the table showing the sensitivities for each scoring method
