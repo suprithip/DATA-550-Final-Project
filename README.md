@@ -35,7 +35,7 @@ Below is a brief explanation of the file structure and code location
 ## How to Generate the Final Report
 
 1. Clone the online repository to your local repository. Set the current working directory to the newly downloaded repository and check to ensure all contents are present.
-2. Ensure all required packages are installed.
+2. Ensure all required packages are installed by `make install` in the terminal window of R studio.
 3. Execute the Makefile by running the command `make report.pdf` in the terminal window of R studio.
 4. Review the final report named `Final-Project-Report.pdf` in the local repository to see the analysis findings.
 5. If you wish to make changes to the code or report, create and checkout a new branch and add all new commits and pushes along this branch. Submit a pull request if you wish to request for the original repository to incorporate these changes. Note: Request may be denied.
