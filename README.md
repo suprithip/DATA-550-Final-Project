@@ -50,8 +50,7 @@ Below is a brief explanation of the file structure and code location
 * run the command `docker build -t data550_finalproject .` or
 * execute `make project_image` in the terminal window of R studio.
   
-**Note**: You can also find the already build image at: https://hub.docker.com/repository/docker/suprithip/data550_finalproject/general
-
+**Note**: You can also find the already build image at: https://hub.docker.com/r/suprithip/data550_finalproject
 
 ### Running the Container and Creating the Report
 3. To run the automated version of the Docker image, you can either execute:
