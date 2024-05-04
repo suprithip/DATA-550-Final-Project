@@ -44,18 +44,20 @@ Below is a brief explanation of the file structure and code location
 1. Clone the online repository to your local repository. Set the current working directory to the newly downloaded repository and check to ensure all contents are present.
 
 2. To build the Docker image, make sure you have Docker installed on your system. Navigate to the local directory which contains the Dockerfile and you can either: 
-  a) run the command `docker build -t data550_finalproject .` or
-  b) execute `make project_image` in the terminal window of R studio.
+
+* run the command `docker build -t data550_finalproject .` or
+* execute `make project_image` in the terminal window of R studio.
   
-Note: You can also find the already build image at: https://hub.docker.com/repository/docker/suprithip/data550_finalproject/general
+**Note**: You can also find the already build image at: https://hub.docker.com/repository/docker/suprithip/data550_finalproject/general
 
 3. To run the automated version of the Docker image, you can either execute:
-  a) `docker run -v "$(pwd)"/report:/final_project/report data550_finalproject` in the terminal window of R studio or
-  b) If you wish to automate retrieving the image from Docker Hub and running the container, execute `docker run -v "$$(pwd)"/report:/final_project/report suprithip/data550_finalproject` instead
+
+*`docker run -v "$(pwd)"/report:/final_project/report data550_finalproject` in the terminal window of R studio or
+* If you wish to automate retrieving the image from Docker Hub and running the container, execute `docker run -v "$$(pwd)"/report:/final_project/report suprithip/data550_finalproject` instead
 
 4. The final pdf will be found in the `report` folder.
 
-Caution: These targets and commands have been developed using a Mac/Linux-OS system. Windows-OS users will need to add an extra / at the start of a file path when mounting a directory.
+**Caution**: These targets and commands have been developed using a Mac/Linux-OS system. Windows-OS users will need to add an extra / at the start of a file path when mounting a directory.
 
 
 ### Future Exploration
