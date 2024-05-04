@@ -41,6 +41,8 @@ Below is a brief explanation of the file structure and code location
 5. If you wish to make changes to the code or report, create and checkout a new branch and add all new commits and pushes along this branch. Submit a pull request if you wish to request for the original repository to incorporate these changes. Note: Request may be denied.
 
 ## How to Generate the Final Report via Docker
+
+###Building the Image
 1. Clone the online repository to your local repository. Set the current working directory to the newly downloaded repository and check to ensure all contents are present.
 
 2. To build the Docker image, make sure you have Docker installed on your system. Navigate to the local directory which contains the Dockerfile and you can either: 
@@ -50,10 +52,13 @@ Below is a brief explanation of the file structure and code location
   
 **Note**: You can also find the already build image at: https://hub.docker.com/repository/docker/suprithip/data550_finalproject/general
 
+
+###Running the Container and Creating the Report
 3. To run the automated version of the Docker image, you can either execute:
 
 * `docker run -v "$(pwd)"/report:/final_project/report data550_finalproject` in the terminal window of R studio or
-* If you wish to automate retrieving the image from Docker Hub and running the container, execute `docker run -v "$$(pwd)"/report:/final_project/report suprithip/data550_finalproject` instead
+* If you wish to automate retrieving the image from Docker Hub and running the container, execute `docker run -v "$$(pwd)"/report:/final_project/report suprithip/data550_finalproject` or
+* execute `make final_report.pdf` in the terminal window of R studio.
 
 4. The final pdf will be found in the `report` folder.
 
