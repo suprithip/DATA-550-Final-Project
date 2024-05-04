@@ -52,7 +52,7 @@ Below is a brief explanation of the file structure and code location
 
 3. To run the automated version of the Docker image, you can either execute:
 
-*`docker run -v "$(pwd)"/report:/final_project/report data550_finalproject` in the terminal window of R studio or
+* `docker run -v "$(pwd)"/report:/final_project/report data550_finalproject` in the terminal window of R studio or
 * If you wish to automate retrieving the image from Docker Hub and running the container, execute `docker run -v "$$(pwd)"/report:/final_project/report suprithip/data550_finalproject` instead
 
 4. The final pdf will be found in the `report` folder.
@@ -60,7 +60,7 @@ Below is a brief explanation of the file structure and code location
 **Caution**: These targets and commands have been developed using a Mac/Linux-OS system. Windows-OS users will need to add an extra / at the start of a file path when mounting a directory.
 
 
-### Future Exploration
+## Future Exploration
 If you would like to adjust the score threshold to investigate how the sensitivity of each diagnostic method is affected:
   1. Go to the [config.yml](config.yml) to change the number from a base threshold of 6 to any other number between 1-10. Save the          file.
   2. Run `make clean` to erase your previous report and figures in the output folder.
