@@ -42,7 +42,7 @@ Below is a brief explanation of the file structure and code location
 
 ## How to Generate the Final Report via Docker
 
-###Building the Image
+### Building the Image
 1. Clone the online repository to your local repository. Set the current working directory to the newly downloaded repository and check to ensure all contents are present.
 
 2. To build the Docker image, make sure you have Docker installed on your system. Navigate to the local directory which contains the Dockerfile and you can either: 
@@ -53,7 +53,7 @@ Below is a brief explanation of the file structure and code location
 **Note**: You can also find the already build image at: https://hub.docker.com/repository/docker/suprithip/data550_finalproject/general
 
 
-###Running the Container and Creating the Report
+### Running the Container and Creating the Report
 3. To run the automated version of the Docker image, you can either execute:
 
 * `docker run -v "$(pwd)"/report:/final_project/report data550_finalproject` in the terminal window of R studio or
