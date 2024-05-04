@@ -1,4 +1,4 @@
-here::i_am("README.md")
+here::i_am("app_data.xlsx")
 
 library(readxl)
 data <- read_excel("app_data.xlsx") #read data
